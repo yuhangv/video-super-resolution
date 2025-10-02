@@ -1,0 +1,16 @@
+# Core
+torch>=2.0.0
+torchvision>=0.15.0
+numpy
+matplotlib
+pillow
+tqdm
+requests
+
+# For notebooks
+jupyter
+notebook
+
+# Optional but recommended
+scipy
+scikit-image
