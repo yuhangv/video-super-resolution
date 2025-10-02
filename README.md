@@ -25,13 +25,8 @@ video-super-resolution/
 │
 ├── src/                            # Source code for models & utilities
 │   ├── models/
-│   │   ├── espcn.py                 # ESPCN architecture
 │   │   ├── esrgan.py                # ESRGAN architecture
 │   │   └── blocks.py                # Shared layers (RRDB, RDB, etc.)
-│   │
-│   ├── datasets/
-│   │   └── div2k.py                 # DIV2K dataset loader & preprocessing
-│   │
 │   └── utils/
 │       ├── losses.py                # Pixel / perceptual / adversarial losses
 │       ├── metrics.py               # PSNR, SSIM, other evaluation metrics
