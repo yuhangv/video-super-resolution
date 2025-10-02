@@ -22,29 +22,30 @@ video-super-resolution/
 ├── notebooks/
 │   └── espcn_superres.ipynb        # ESPCN Colab notebook (training + results)
 │
-├── src/                            # Source code for models
-│   ├── __init__.py
-│   ├── models/                     # Model definitions
-│   │   ├── espcn.py
-│   │   ├── esrgan.py
-│   │   └── blocks.py               # Common layers (RRDB, etc.)
-│   ├── datasets/                   # Dataset loaders
-│   │   └── div2k.py
-│   └── utils/                      # Utility functions
-│       ├── losses.py
-│       ├── metrics.py
-│       └── visualization.py
+├── src/                            # Source code for models & utilities
+│   ├── models/
+│   │   ├── espcn.py                 # ESPCN architecture
+│   │   ├── esrgan.py                # ESRGAN architecture
+│   │   └── blocks.py                # Shared layers (RRDB, RDB, etc.)
+│   │
+│   ├── datasets/
+│   │   └── div2k.py                 # DIV2K dataset loader & preprocessing
+│   │
+│   └── utils/
+│       ├── losses.py                # Pixel / perceptual / adversarial losses
+│       ├── metrics.py               # PSNR, SSIM, other evaluation metrics
+│       └── visualization.py         # Plotting & image saving utilities
 │
-├── scripts/                        # Training & inference entry points
-│   ├── train_espcn.py              # (optional if you modularize notebook)
-│   └── train_esrgan_win3070_cli_val.py
+├── scripts/
+│   ├── train_espcn.py               # ESPCN trainer (optional, modularized)
+│   └── train_esrgan_win3070_cli_val.py  # ESRGAN trainer with CLI + validation
 │
 ├── results/
-│   ├── val/                        # Validation outputs (LR | Bicubic | SR)
-│   └── train/                      # (optional) Training sample patches
+│   ├── val/                         # Validation outputs (LR | Bicubic | SR)
+│   └── train/                       # (optional) Training visualization samples
 │
-├── checkpoints/                    # Saved model weights (gitignored)
+├── checkpoints/                     # Saved model weights (gitignored)
 │
-├── requirements.txt                # Python dependencies
-├── LICENSE                         # MIT License
-└── README.md                       # Project documentation
+├── requirements.txt                 # Python dependencies
+├── LICENSE                          # MIT License
+└── README.md                        # Project documentation
