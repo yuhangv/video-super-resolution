@@ -18,6 +18,7 @@ Both are trained and evaluated on the **DIV2K dataset**, with support for GPU ac
 ---
 
 ## 📂 Repository Structure
+
 video-super-resolution/
 ├── notebooks/
 │   └── espcn_superres.ipynb        # ESPCN Colab notebook (training + results)
