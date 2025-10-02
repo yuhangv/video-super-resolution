@@ -18,10 +18,33 @@ Both are trained and evaluated on the **DIV2K dataset**, with support for GPU ac
 ---
 
 ## 📂 Repository Structure
+video-super-resolution/
 ├── notebooks/
-│ └── espcn_superres.ipynb # ESPCN implementation + training on Colab
-├── scripts/
-│ └── train_esrgan_win3070_cli_val.py # ESRGAN trainer with CLI + validation
-├── results_val/ # Saved validation results (after training)
-├── requirements.txt # Dependencies
-└── README.md # This file
+│   └── espcn_superres.ipynb        # ESPCN Colab notebook (training + results)
+│
+├── src/                            # Source code for models
+│   ├── __init__.py
+│   ├── models/                     # Model definitions
+│   │   ├── espcn.py
+│   │   ├── esrgan.py
+│   │   └── blocks.py               # Common layers (RRDB, etc.)
+│   ├── datasets/                   # Dataset loaders
+│   │   └── div2k.py
+│   └── utils/                      # Utility functions
+│       ├── losses.py
+│       ├── metrics.py
+│       └── visualization.py
+│
+├── scripts/                        # Training & inference entry points
+│   ├── train_espcn.py              # (optional if you modularize notebook)
+│   └── train_esrgan_win3070_cli_val.py
+│
+├── results/
+│   ├── val/                        # Validation outputs (LR | Bicubic | SR)
+│   └── train/                      # (optional) Training sample patches
+│
+├── checkpoints/                    # Saved model weights (gitignored)
+│
+├── requirements.txt                # Python dependencies
+├── LICENSE                         # MIT License
+└── README.md                       # Project documentation
